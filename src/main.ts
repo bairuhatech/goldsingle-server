@@ -5,7 +5,7 @@ import { setupSwagger } from "./swagger";
 import * as dotenv from "dotenv";
 
 async function bootstrap() {
-  const logger = new Logger("Next ME");
+  const logger = new Logger("Gold Single Server");
   dotenv.config();
   const app = await NestFactory.create(AppModule);
   app.useGlobalPipes(new ValidationPipe());
@@ -20,8 +20,8 @@ async function bootstrap() {
     allowedHeaders: "*",
     origin: "*",
   });
-  await app.listen(process.env.PORT || 8000, () =>
-    logger.log(`server is running on port ${process.env.PORT || 8000} `)
+  await app.listen(process.env.PORT || 8006, () =>
+    logger.log(`server is running on port ${process.env.PORT || 8006} `)
   );
 }
 //test
